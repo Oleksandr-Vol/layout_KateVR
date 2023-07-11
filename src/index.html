@@ -3,11 +3,86 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>KAT</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com" crossorigin="anonymous"
+    >
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
+    <header class="header">
+      <div class="top-bar">
+        <a href="index.html" class="top-bar__logo-link">
+          <img
+            src="images/logo.png"
+            alt="logo"
+            class="top-bar__logo"
+          >
+        </a>
+
+        <a href="#" class="top-bar__icon"></a>
+      </div>
+
+      <picture>
+        <source
+          media="(min-width: 1440px)"
+          srcset="images/header_img/header-desktop-big_screen.png"
+        >
+        <source
+          media="(min-width: 1280px)"
+          srcset="images/header_img/header-desktop-small_screen.png"
+        >
+        <source
+          media="(min-width: 640px)"
+          srcset="images/header_img/header-tablet.png"
+        >
+        <img
+          src="images/header_img/header-mobile.png"
+          alt="Product images"
+          class="header__image"
+        >
+      </picture>
+
+      <div class="header__content">
+        <h1 class="header__title">
+          THE NEW START OF
+        </h1>
+
+        <p class="header__text">
+          Discover the most comprehensive VR Locomotion system, and unlock infinite motion in any games on any platforms!
+        </p>
+
+        <p class="header__price">1200$</p>
+
+        <a href="#" class="button-play">
+          <div class="button-play__img"></div>
+
+          <div class="button-play__text">Play Video</div>
+        </a>
+
+        <a href="#" class="button-buy">Buy Now</a>
+      </div>
+    </header>
+
+    <menu>
+
+    </menu>
+
+    <main>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+
+
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>

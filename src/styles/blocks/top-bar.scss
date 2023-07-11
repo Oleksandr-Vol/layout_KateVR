@@ -1,0 +1,23 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0;
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    height: 12px;
+  }
+
+  &__icon {
+    display: block;
+    background-image: url(../images/icons/icon-menu.svg);
+    width: 20px;
+    height: 9px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

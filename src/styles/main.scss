@@ -1,7 +1,13 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils/reset.scss";
+@import "./utils/variables.scss";
+@import "./utils/mixins.scss";
 
-body {
-  background: $c-gray;
+@import "./blocks/header.scss";
+@import "./blocks/top-bar.scss";
+@import "./blocks/button-play.scss";
+@import "./blocks/button-buy.scss";
+
+html {
+  font-family: "Inter", sans-serif;
+  color: #929292;
 }

@@ -1,0 +1,37 @@
+.button-play {
+  // display: flex;
+  display: inline-flex;
+  align-items: center;
+  // width: max-content;
+  text-decoration: none;
+
+  &__img {
+    position: relative;
+    width: 90px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-image: url(../images/button/button-main.svg);
+
+    &::before {
+      @include buttonLine (12px);
+    }
+
+    &::after {
+      @include buttonLine (56px);
+    }
+  }
+
+  &__text {
+    position: relative;
+    left: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+
+  &:hover &__img {
+    background-image: url(../images/button/button-main-hover.svg);
+  }
+
+}

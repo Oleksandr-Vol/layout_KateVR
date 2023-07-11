@@ -1,0 +1,55 @@
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onSmallDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onBigDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin title ($size, $text) {
+  color: #fff;
+  font-size: $size;
+  font-weight: 900;
+  line-height: 130%;
+
+  &::after {
+    content: "#{$text}";
+    display: block;
+    color: #05c2df;
+    font-weight: 400;
+  }
+}
+
+@mixin buttonLine ($topDistance) {
+  position: absolute;
+  top: $topDistance;
+  left: 87px;
+  content: "";
+  display: block;
+  width: 135px;
+  height: 2px;
+  background-image: url(../images/button/button-line-mob.svg);
+
+  @include onTablet {
+    width: 162px;
+    background-image: url(../images/button/button-line.svg);
+  }
+}
+
+@mixin hover ($property, $toValue) {
+  transition: #{$property} 0.3s;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
