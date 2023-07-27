@@ -1,0 +1,29 @@
+.main-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: $main-button-height;
+  border-radius: 4px;
+  background-color: $third-color;
+  transition: 0.3s;
+
+  color: $secondary-color;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%;
+
+  &--buy-now {
+    flex-grow: 1;
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+    color: $third-color;
+  }
+
+  &:active {
+    background-color: $fourth-background;
+    color: #2f2f2f;
+  }
+}

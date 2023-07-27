@@ -1,0 +1,42 @@
+.page {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: $main-color;
+  scroll-behavior: smooth;
+
+  &__body {
+    min-width: 320px;
+  }
+
+  &__button-buy {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: $main-button-height + 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.21) 0%, rgba(4, 4, 4, 0.59) 23.44%, #050505 100%);
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 1;
+
+    &:target {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

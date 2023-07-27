@@ -1,0 +1,29 @@
+.areas {
+  background-color: $third-background;
+
+  @include contentPaddingInLine;
+  @include contentPaddingBlock;
+
+  &__title {
+    margin-bottom: 12px;
+
+    &::after {
+      content: " GAMING!";
+    }
+  }
+
+  &__title-text {
+    margin-bottom: 30px;
+    @include titleText;
+  }
+
+  &__wrapper {
+    display: grid;
+    row-gap: 20px;
+  }
+
+  &__title-h3 {
+    margin-bottom: 11px;
+    @include titleH3;
+   }
+}

@@ -1,0 +1,20 @@
+.nav {
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 49px;
+
+    @include contentPaddingInLine;
+
+    color: $secondary-color;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #110e25;
+      color: $third-color;
+    }
+  }
+}

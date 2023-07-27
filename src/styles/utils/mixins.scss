@@ -16,18 +16,12 @@
   }
 }
 
-@mixin title ($size, $text) {
-  color: #fff;
-  font-size: $size;
-  font-weight: 900;
-  line-height: 130%;
+@mixin contentPaddingInLine {
+  padding-inline: 20px;
+}
 
-  &::after {
-    content: "#{$text}";
-    display: block;
-    color: #05c2df;
-    font-weight: 400;
-  }
+@mixin contentPaddingBlock {
+  padding-block: 50px;
 }
 
 @mixin buttonLine ($topDistance) {
@@ -36,15 +30,33 @@
   left: 87px;
   content: "";
   display: block;
-  width: 135px;
+  width: $button-play-line-mob-width;
   height: 2px;
-  background-image: url(../images/button/button-line-mob.svg);
+  background-image: url(../images/button/button-play/button-line-mob.svg);
 
   @include onTablet {
-    width: 162px;
-    background-image: url(../images/button/button-line.svg);
+    width: $button-play-line-width;
+    background-image: url(../images/button/button-play/button-line.svg);
   }
 }
+
+@mixin titleH3 {
+  color: $secondary-color;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: normal;
+}
+
+@mixin titleText {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  color: $third-color;
+}
+
+// @mixin pageGrid {
+
+// }
 
 @mixin hover ($property, $toValue) {
   transition: #{$property} 0.3s;

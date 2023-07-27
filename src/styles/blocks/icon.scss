@@ -1,0 +1,21 @@
+.icon {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url(../images/icons/icon-menu.svg);
+    width: 20px;
+    height: 9px;
+  }
+
+  &--close {
+    background-image: url(../images/icons/icon-close.svg);
+    width: 17px;
+    height: 17px;
+
+    &:hover {
+      background-image: url(../images/icons/icon-close-hover.svg);
+    }
+  }
+}

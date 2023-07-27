@@ -1,0 +1,23 @@
+.contact {
+  background-color: $third-background;
+
+  @include contentPaddingInLine;
+  @include contentPaddingBlock;
+
+  &__title-text {
+    margin-bottom: 11px;
+    @include titleText;
+  }
+
+  &__title {
+    margin-bottom: 38px;
+
+    &::after {
+      content: " IN TOUCH";
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+  }
+}

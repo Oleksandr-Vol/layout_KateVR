@@ -1,16 +1,20 @@
 .button-play {
-  // display: flex;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  // width: max-content;
+  width: $button-play-main-width + $button-play-line-mob-width;
   text-decoration: none;
+  transition: 0.3s;
+
+  @include onTablet {
+    width: $button-play-main-width + $button-play-line-width;
+  }
 
   &__img {
     position: relative;
-    width: 90px;
+    width: $button-play-main-width;
     height: 70px;
     background-repeat: no-repeat;
-    background-image: url(../images/button/button-main.svg);
+    background-image: url(../images/button/button-play/button-main.svg);
 
     &::before {
       @include buttonLine (12px);
@@ -22,16 +26,14 @@
   }
 
   &__text {
-    position: relative;
-    left: 20px;
-    color: #fff;
+    padding-left: 20px;
+    color: $secondary-color;
     font-size: 16px;
     font-weight: 500;
     line-height: 130%;
   }
 
   &:hover &__img {
-    background-image: url(../images/button/button-main-hover.svg);
+    background-image: url(../images/button/button-play/button-main-hover.svg);
   }
-
 }
