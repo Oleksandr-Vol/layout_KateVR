@@ -6,10 +6,6 @@
 
   &__title {
     margin-bottom: 12px;
-
-    &::after {
-      content: " GAMING!";
-    }
   }
 
   &__title-text {
@@ -25,5 +21,5 @@
   &__title-h3 {
     margin-bottom: 11px;
     @include titleH3;
-   }
+  }
 }

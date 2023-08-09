@@ -4,12 +4,12 @@
   font-weight: 900;
   line-height: 130%;
 
-  &::after {
-    color: $third-color;
-    font-weight: 400;
-  }
-
   &--h1 {
     font-size: 26px;
+  }
+
+  &__accented {
+    color: $third-color;
+    font-weight: 400;
   }
 }

@@ -18,4 +18,34 @@
       background-image: url(../images/icons/icon-close-hover.svg);
     }
   }
+
+  &--back {
+    background-image: url(../images/icons/icon-back.svg);
+    height: 18px;
+    width: 10px;
+  }
+
+  &--facebook {
+    background-image: url(../images/icons/social/icon-facebook.svg);
+    height: 16px;
+    width: 8px;
+  }
+
+  &--twitter {
+    background-image: url(../images/icons/social/icon-twitter.svg);
+    height: 14px;
+    width: 19px;
+  }
+
+  &--youtube {
+    background-image: url(../images/icons/social/icon-youtube.svg);
+    height: 14px;
+    width: 18px;
+  }
+
+  &--reddit {
+    background-image: url(../images/icons/social/icon-reddit.svg);
+    height: 18px;
+    width: 18px;
+  }
 }

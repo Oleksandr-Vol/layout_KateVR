@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include contentPaddingInLine;
   padding-block: 20px 0;
+
+  @include contentPaddingInLine;
 
   &__logo-link {
     display: flex;
@@ -15,5 +16,9 @@
 
   &--menu {
     justify-content: flex-end;
+  }
+
+  &--menu-language {
+    justify-content: flex-start;
   }
 }

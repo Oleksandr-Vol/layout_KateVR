@@ -1,0 +1,16 @@
+.faq {
+  background-color: $main-background;
+  padding-bottom: 13px;
+
+  &__top {
+    margin-bottom: 30px;
+  }
+
+  &__main {
+    @include contentPaddingInLine;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+}

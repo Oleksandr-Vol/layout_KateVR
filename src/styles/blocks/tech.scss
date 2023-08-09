@@ -7,12 +7,6 @@
   @include contentPaddingInLine;
   @include contentPaddingBlock;
 
-  &__title {
-    &::after {
-      content: " SPECS";
-    }
-  }
-
   &__img {
     position: relative;
     align-self: center;
@@ -35,13 +29,13 @@
       width: 358px;
       height: 354px;
 
-    &::before {
-      content: "";
-      left: 3px;
-      width: 345px;
-      height: 345px;
-      border-radius: 345px;
-      border-width: 6px;
+      &::before {
+        content: "";
+        left: 3px;
+        width: 345px;
+        height: 345px;
+        border-radius: 345px;
+        border-width: 6px;
       }
     }
 
@@ -49,12 +43,12 @@
       width: 298px;
       height: 295px;
 
-    &::before {
-      content: "";
-      left: 3px;
-      width: 287px;
-      height: 287px;
-      border-radius: 287px;
+      &::before {
+        content: "";
+        left: 3px;
+        width: 287px;
+        height: 287px;
+        border-radius: 287px;
       }
     }
   }
@@ -118,11 +112,7 @@
 
       &--right {
         &::after {
-          content: "Type: Lthium-lon polymer batteries \a
-          Capacity: 370mAh \a
-          Battery life: 10h of continuous use 150 hours on stand by \a
-          Charging: Fast charging - 1 hour \a
-          Charging voltage and current: 5V = 0.5A";
+          content: "Type: Lthium-lon polymer batteries \a Capacity: 370mAh \a Battery life: 10h of continuous use 150 hours on stand by \a Charging: Fast charging - 1 hour \a Charging voltage and current: 5V = 0.5A";
           top: -51px;
           left: -168px;
           overflow: scroll;
@@ -143,9 +133,7 @@
 
       &--left {
         &::after {
-          content: "Wireless: Bluetooth 4.2 \a
-          Signal range: 5m \a
-          Receiver: USB 2.0 and above";
+          content: "Wireless: Bluetooth 4.2 \a Signal range: 5m \a Receiver: USB 2.0 and above";
           top: -117px;
           left: -35px;
         }
@@ -153,13 +141,10 @@
     }
   }
 
-
   // &__description {
 
   //   &--sensor {
 
   //   }
   // }
-
-
 }

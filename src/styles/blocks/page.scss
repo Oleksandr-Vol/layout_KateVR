@@ -15,7 +15,12 @@
     display: flex;
     align-items: center;
     height: $main-button-height + 20px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.21) 0%, rgba(4, 4, 4, 0.59) 23.44%, #050505 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.21) 0%,
+      rgba(4, 4, 4, 0.59) 23.44%,
+      #050505 100%
+    );
     left: 20px;
     right: 20px;
     bottom: 0;

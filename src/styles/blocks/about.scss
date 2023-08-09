@@ -6,10 +6,6 @@
 
   &__title {
     margin-bottom: 25px;
-
-    &::after {
-      content: " PRODUCT";
-    }
   }
 
   &__description {
@@ -27,9 +23,5 @@
 
   &__second-title {
     margin-bottom: 22px;
-
-    &::after {
-      content: " YOU!";
-    }
   }
 }
