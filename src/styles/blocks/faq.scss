@@ -13,4 +13,36 @@
   &__title {
     margin-bottom: 30px;
   }
+
+  &__article {
+    border-radius: 4px;
+    border: 1px solid $third-color;
+    padding: 20px 12px 12px;
+  }
+
+  &__question-link {
+    text-decoration: none;
+  }
+
+  &__question {
+    margin-bottom: 18px;
+    color: $third-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__wrapper {
+    display: none;
+  }
+
+  &__answer {
+
+  }
+
+  &__inf-of-update {
+
+  }
+
+
 }
