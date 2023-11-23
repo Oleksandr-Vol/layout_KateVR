@@ -4,7 +4,7 @@
   align-items: center;
   text-decoration: none;
   width: 100%;
-  height: $main-button-height;
+  height: $main-button-height-mob;
   border-radius: 4px;
   background-color: $third-color;
   transition: 0.3s;
@@ -14,10 +14,45 @@
   font-weight: 500;
   line-height: 130%;
 
+  @include onTablet {
+    width: 458px;
+    height: $main-button-height;
+    font-size: 16px;
+  }
+
+  @include onSmallDesktop {
+    width: 200px;
+    height: $main-button-height;
+    font-size: 16px;
+  }
+
   &--form {
+    grid-column: 1 / -1;
     border: none;
+    padding: 0;
     font-family: inherit;
     cursor: pointer;
+
+    &--contact {
+      @include onTablet {
+        width: 200px;
+      }
+    }
+
+    &--order {
+      margin-top: 4px;
+
+      @include onTablet {
+        margin-top: 14px;
+        justify-self: center;
+      }
+
+      &--pay {
+        @include onTablet {
+          margin-top: 58px;
+        }
+      }
+    }
   }
 
   &:hover {
@@ -27,6 +62,6 @@
 
   &:active {
     background-color: $fourth-background;
-    color: #2f2f2f;
+    color: $fourth-color;
   }
 }

@@ -18,10 +18,26 @@
 
 @mixin contentPaddingInLine {
   padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 34px;
+  }
+
+  @include onSmallDesktop {
+    padding-inline: 110px;
+  }
 }
 
 @mixin contentPaddingBlock {
   padding-block: 50px;
+
+  @include onTablet {
+    padding-block: 70px;
+  }
+
+  @include onSmallDesktop {
+    padding-block: 100px;
+  }
 }
 
 @mixin buttonLine ($topDistance) {
@@ -42,21 +58,32 @@
 
 @mixin titleH3 {
   color: $secondary-color;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   line-height: normal;
 }
 
 @mixin titleText {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: normal;
   color: $third-color;
 }
 
-// @mixin pageGrid {
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
 
-// }
+  @include onTablet {
+    --columns: 6;
+  }
+
+  @include onSmallDesktop {
+    --columns: 12;
+  }
+}
 
 @mixin hover ($property, $toValue) {
   transition: #{$property} 0.3s;
@@ -64,4 +91,10 @@
   &:hover {
     #{$property}: $toValue;
   }
+}
+
+@mixin iconProperties {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
 }

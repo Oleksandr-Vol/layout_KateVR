@@ -1,0 +1,17 @@
+.more-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: $third-color;
+  font-weight: 500;
+
+  &:hover {
+    color: $secondary-color;
+  }
+
+  &:hover &__icon {
+    background-image: url(../images/icons/icon-unfold-down-hover.svg);
+  }
+}

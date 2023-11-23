@@ -1,11 +1,91 @@
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  @include pageGrid;
+  row-gap: 30px;
+
+  &--order {
+    padding-block: 30px 37px;
+    @include contentPaddingInLine;
+    row-gap: 36px;
+
+    @include onTablet {
+      padding-block: 5px 43px;
+      row-gap: 46px;
+    }
+  }
 
   &__label {
     display: block;
     position: relative;
+    grid-column: 1 / -1;
+
+    &--quantity {
+      grid-column: 1 / 2;
+      justify-self: center;
+
+      @include onTablet {
+        justify-self: start;
+      }
+
+      &--pay {
+        @include onTablet {
+          grid-column: 2 / 3;
+        }
+      }
+    }
+
+    &--card-number {
+      margin-top: 17px;
+
+      @include onTablet {
+        margin-top: 14px;
+        // grid-column: 2 / -2;
+        grid-column: 2 / -3;
+      }
+    }
+
+    &--card-holder-name {
+      @include onTablet {
+        grid-column: 2 / -2;
+      }
+    }
+
+    &--expiration-date {
+      grid-column: 1 / 2;
+
+      @include onTablet {
+        grid-column: 2 / 4;
+      }
+    }
+
+    &--cvv {
+      grid-column: 2 / 3;
+
+      @include onTablet {
+        grid-column: 4 / 5;
+      }
+    }
+
+    &--start {
+      justify-self: start;
+    }
+
+    &--first-name {
+      @include onTablet {
+        margin-top: 8px;
+      }
+    }
+
+    &--left-side {
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--right-side {
+      @include onTablet {
+        grid-column: 4 / -1;
+      }
+    }
   }
 
   &__field {
@@ -14,7 +94,7 @@
     height: 34px;
     padding: 0;
     border: none;
-    border-bottom: 1px solid #2f2f2f;
+    border-bottom: 1px solid $fourth-color;
     font-family: inherit;
     color: $secondary-color;
     font-size: 16px;
@@ -23,15 +103,49 @@
     transition: 0.3s;
 
     &--message {
+      display: flex;
       padding: 5px 0;
       height: 82px;
       resize: none;
+
+      &--contact {
+        @include onTablet {
+          margin-bottom: 18px;
+        }
+
+        @include onSmallDesktop {
+          margin-bottom: 60px;
+        }
+      }
     }
 
     &:focus {
       outline: none;
       caret-color: $third-color;
       border-color: $third-color;
+    }
+
+    &--pay {
+      height: 40px;
+      font-size: 18px;
+      line-height: 130%;
+      letter-spacing: 3.6px;
+
+      &--expiration-date {
+        letter-spacing: normal;
+      }
+
+      &::placeholder {
+        color: $fourth-color;
+      }
+    }
+
+    &--expiration-date {
+      width: 85px;
+    }
+
+    &--cvv {
+      width: 45px;
     }
 
     // &:-webkit-autofill {
@@ -47,10 +161,83 @@
     font-weight: 400;
     line-height: 150%;
     transition: 0.3s;
+
+    &--static {
+      position: static;
+    }
+
+    &--quantity {
+      margin-bottom: 10px;
+      font-size: 16px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--country-city {
+      margin-bottom: 13px;
+    }
+
+    &--pay {
+      margin-bottom: 8px;
+    }
   }
 
   &__field:focus + .form__field-name {
     color: $third-color;
     top: -21px;
   }
+
+  &__price {
+    grid-column: 2 / 3;
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 3 / 4;
+      text-align: left;
+    }
+
+    &--pay {
+      @include onTablet {
+        grid-column: 4 / 5;
+      }
+    }
+  }
+
+  &__price-text {
+    margin-bottom: 10px;
+    line-height: 130%;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__price-num {
+    color: $third-color;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: normal;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+  }
+
+  &__icon-visa {
+    display: none;
+
+    @include onTablet {
+      // display: block;
+      grid-column: -3 / -2;
+      place-self: end;
+    }
+  }
+
+  // &__quantity {
+  //   width: 90px;
+  //   height: 41px;
+  //   background-color: $fourth-background;
+  // }
 }

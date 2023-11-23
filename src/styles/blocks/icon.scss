@@ -1,18 +1,36 @@
 .icon {
-  display: block;
-  background-size: contain;
-  background-repeat: no-repeat;
+  @include iconProperties;
 
   &--menu {
     background-image: url(../images/icons/icon-menu.svg);
     width: 20px;
     height: 9px;
+
+    @include onTablet {
+      width: 29px;
+      height: 13px;
+    }
+
+    @include onSmallDesktop {
+      display: none;
+    }
   }
 
   &--close {
     background-image: url(../images/icons/icon-close.svg);
     width: 17px;
     height: 17px;
+    transition: 0.3s;
+
+    &--order {
+      width: 15px;
+      height: 15px;
+
+      @include onTablet {
+        width: 17px;
+        height: 17px;
+      }
+    }
 
     &:hover {
       background-image: url(../images/icons/icon-close-hover.svg);
@@ -27,25 +45,74 @@
 
   &--facebook {
     background-image: url(../images/icons/social/icon-facebook.svg);
-    height: 16px;
     width: 8px;
+    height: 16px;
+
+    @include onTablet {
+      width: 6px;
+      height: 12px;
+    }
   }
 
   &--twitter {
     background-image: url(../images/icons/social/icon-twitter.svg);
-    height: 14px;
     width: 19px;
+    height: 14px;
+
+    @include onTablet {
+      width: 15px;
+      height: 11px;
+    }
   }
 
   &--youtube {
     background-image: url(../images/icons/social/icon-youtube.svg);
-    height: 14px;
     width: 18px;
+    height: 14px;
+    background-position: bottom;
+
+    @include onTablet {
+      width: 14px;
+      height: 11px;
+    }
   }
 
   &--reddit {
     background-image: url(../images/icons/social/icon-reddit.svg);
-    height: 18px;
     width: 18px;
+    height: 18px;
+
+    @include onTablet {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &--up {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      background-image: url(../images/icons/icon-up.svg);
+      width: 48px;
+      height: 48px;
+      transition: 0.3s;
+
+      &:hover {
+        background-image: url(../images/icons/icon-up-hover.svg);
+      }
+    }
+  }
+
+  &--visa {
+    background-image: url(../images/icons/icon-visa.svg);
+    width: 54px;
+    height: 34px;
+  }
+
+  &--icon-unfold-down {
+    background-image: url(../images/icons/icon-unfold-down.svg);
+    width: 8px;
+    height: 5px;
   }
 }

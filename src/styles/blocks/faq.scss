@@ -1,23 +1,40 @@
 .faq {
   background-color: $main-background;
-  padding-bottom: 13px;
-
-  &__top {
-    margin-bottom: 30px;
-  }
+  min-height: 100vh;
 
   &__main {
+    padding-block: 30px 13px;
     @include contentPaddingInLine;
+
+    @include onTablet {
+      padding-block: 51px;
+    }
   }
 
   &__title {
     margin-bottom: 30px;
   }
 
+  &__article-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+
+    @include onTablet {
+      gap: 18px;
+    }
+  }
+
   &__article {
     border-radius: 4px;
     border: 1px solid $third-color;
-    padding: 20px 12px 12px;
+    padding: 18px 12px;
+    // padding: 20px 12px 12px;
+
+    @include onTablet {
+      padding: 14px 30px 15px;
+      // padding: 20px 14px 24px 28px;
+    }
   }
 
   &__question-link {
@@ -25,22 +42,38 @@
   }
 
   &__question {
-    margin-bottom: 18px;
     color: $third-color;
     font-size: 16px;
     font-weight: 400;
     line-height: 150%;
   }
 
-  &__wrapper {
-    display: none;
+  &__answer-wrapper {
+    // display: none;
   }
 
-  // &__answer {
+  &__answer {
+    margin-block: 18px 10px;
 
-  // }
+    @include onTablet {
+      margin-block: 18px 15px;
+    }
+  }
 
-  // &__inf-of-update {
+  &__inf-of-update {
+    color: $fifth-color;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+  }
 
-  // }
+  &__more-link {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+  }
 }

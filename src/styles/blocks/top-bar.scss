@@ -2,9 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 20px 0;
+  padding-top: 20px;
 
   @include contentPaddingInLine;
+
+  @include onTablet {
+    padding-top: 30px;
+  }
+
+  @include onTablet {
+    padding-top: 47px;
+  }
 
   &__logo-link {
     display: flex;
@@ -12,6 +20,14 @@
 
   &__logo {
     height: 12px;
+
+    @include onTablet {
+      height: 14px;
+    }
+
+    @include onSmallDesktop {
+      height: 16px;
+    }
   }
 
   &--menu {
@@ -20,5 +36,30 @@
 
   &--menu-language {
     justify-content: flex-start;
+  }
+
+  &__left-side {
+    @include onSmallDesktop {
+      display: flex;
+      gap: 35px;
+    }
+  }
+
+  &__select {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+    }
+  }
+
+  &__right-side {
+    display: none;
+
+    @include onSmallDesktop {
+      display: flex;
+      align-items: center;
+      gap: 37px;
+    }
   }
 }

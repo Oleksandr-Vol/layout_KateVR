@@ -1,19 +1,49 @@
 .tech {
-  display: flex;
-  flex-direction: column;
-  row-gap: 40px;
+  @include pageGrid;
+  row-gap: 45px;
   background-color: $third-background;
 
   @include contentPaddingInLine;
-  @include contentPaddingBlock;
+  padding-block: 50px;
+
+  @include onTablet {
+    padding-block: 80px;
+    row-gap: 65px;
+  }
+
+  @include onSmallDesktop {
+    row-gap: 141px;
+    padding-block: 100px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include onSmallDesktop {
+      justify-self: end;
+    }
+  }
 
   &__img {
     position: relative;
-    align-self: center;
-    background-image: url(../images/tech.png);
+    grid-column: 1 / -1;
+    justify-self: center;
+    background-image: url(../images/tech/tech-main.png);
     width: 197px;
     height: 195px;
     background-size: contain;
+
+    @include onTablet {
+      width: 358px;
+      height: 354px;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 5 / 9;
+      justify-self: start;
+      width: 298px;
+      height: 295px;
+    }
 
     &::before {
       content: "";
@@ -23,13 +53,8 @@
       height: 188px;
       border-radius: 189px;
       border: 4px solid #0e0c1e;
-    }
 
-    @include onTablet {
-      width: 358px;
-      height: 354px;
-
-      &::before {
+      @include onTablet {
         content: "";
         left: 3px;
         width: 345px;
@@ -37,13 +62,8 @@
         border-radius: 345px;
         border-width: 6px;
       }
-    }
 
-    @include onSmallDesktop {
-      width: 298px;
-      height: 295px;
-
-      &::before {
+      @include onSmallDesktop {
         content: "";
         left: 3px;
         width: 287px;
@@ -51,100 +71,229 @@
         border-radius: 287px;
       }
     }
+
+    &::after {
+      @include onSmallDesktop {
+        content: "";
+        position: absolute;
+        top: 38px;
+        left: -12px;
+        transform: rotate(1.7deg);
+        background-repeat: no-repeat;
+        background-image: url(../images/tech/tech-line-left-second.svg);
+        width: 50px;
+        height: 201px;
+      }
+    }
   }
 
   &__button {
-    display: block;
+    @include iconProperties;
     position: absolute;
     background-image: url(../images/button/button-tech_specs/button-open.svg);
     width: 34px;
     height: 34px;
     outline: none;
 
+    @include onTablet {
+      width: 62px;
+      height: 62px;
+    }
+
+    @include onSmallDesktop {
+      display: none;
+    }
+
     &--top {
       top: -11px;
       left: 60px;
+
+      @include onTablet {
+        top: -27px;
+        left: 65px;
+      }
     }
 
     &--right {
       top: 80px;
       right: 29px;
+
+      @include onTablet {
+        top: 145px;
+        right: 49px;
+      }
     }
 
     &--left {
       left: -17px;
       bottom: 8px;
+
+      @include onTablet {
+        left: -58px;
+        bottom: 19px;
+      }
     }
 
     &--pressed {
       background-image: url(../images/button/button-tech_specs/button-close.svg);
       opacity: 0;
       pointer-events: none;
-      // overflow: scroll;
       transition: 0.3s;
-
-      &::after {
-        position: absolute;
-        width: 147px;
-        height: 96px;
-        padding: 10px;
-        background-color: $fourth-background;
-        font-size: 12px;
-        color: $main-color;
-        border-radius: 4px;
-        white-space: pre-wrap;
-      }
 
       &:target {
         opacity: 1;
         pointer-events: all;
       }
+    }
+  }
 
-      &--top {
-        &::after {
-          content: "Weight: 35g/1.23oz each \a
-          Dimension: 50mm/1.97in 24mm/0.94in \a
-          Light: LED lights";
-          top: 35px;
-          left: -121px;
-        }
-      }
+  &__article-top {
+    position: absolute;
+    top: 24px;
+    left: -52px;
+    display: none;
 
-      &--right {
-        &::after {
-          content: "Type: Lthium-lon polymer batteries \a Capacity: 370mAh \a Battery life: 10h of continuous use 150 hours on stand by \a Charging: Fast charging - 1 hour \a Charging voltage and current: 5V = 0.5A";
-          top: -51px;
-          left: -168px;
-          overflow: scroll;
-          // overflow-y: scroll;
+    @include onTablet {
+      top: 37px;
+      left: -52px;
+    }
 
-          // &::-webkit-scrollbar {
-          //   -webkit-appearance: none;
-          // }
+    @include onSmallDesktop {
+      display: block;
+      top: -60px;
+      left: -356px;
+    }
 
-        }
-
-        // &::after::-webkit-scrollbar-thumb {
-        //   border-radius: 8px;
-        //   border: 2px solid white;
-        //   background-color: rgba(0, 0, 0, .5);
-        // }
-      }
-
-      &--left {
-        &::after {
-          content: "Wireless: Bluetooth 4.2 \a Signal range: 5m \a Receiver: USB 2.0 and above";
-          top: -117px;
-          left: -35px;
-        }
+    &::before {
+      @include onSmallDesktop {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 101px;
+        @include iconProperties;
+        background-image: url(../images/tech/tech-line-top.svg);
+        width: 403px;
+        height: 72px;
       }
     }
   }
 
-  // &__description {
+  &__article-right {
+    position: absolute;
+    width: 185px;
+    height: 107px;
+    top: 34px;
+    left: -52px;
+    display: none;
 
-  //   &--sensor {
+    @include onTablet {
+      height: auto;
+      width: 365px;
+      left: -120px;
+      top: 65px;
+    }
 
-  //   }
-  // }
+    @include onSmallDesktop {
+      display: block;
+      top: -60px;
+      left: 361px;
+    }
+
+    &::before {
+      @include onSmallDesktop {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: -209px;
+        @include iconProperties;
+        background-image: url(../images/tech/tech-line-right.svg);
+        width: 192px;
+        height: 245px;
+      }
+    }
+  }
+
+  &__article-left {
+    position: absolute;
+    top: 63px;
+    left: -60px;
+    display: none;
+
+    @include onTablet {
+      top: 162px;
+      left: -90px;
+    }
+
+    @include onSmallDesktop {
+      display: block;
+      top: 156px;
+      left: -271px;
+    }
+
+    &::before {
+      @include onSmallDesktop {
+        content: "";
+        position: absolute;
+        top: -100px;
+        left: 140px;
+        @include iconProperties;
+        background-image: url(../images/tech/tech-line-left.svg);
+        width: 134px;
+        height: 113px;
+      }
+    }
+  }
+
+  &__description {
+    background-color: $fourth-background;
+    font-size: 12px;
+    line-height: 150%;
+    border-radius: 4px;
+    padding: 15px 10px 20px;
+
+    @include onTablet {
+      font-size: 15px;
+      border-radius: 6px;
+      padding: 18px 12px 23px;
+    }
+
+    @include onSmallDesktop {
+      background-color: transparent;
+      font-size: 16px;
+      padding: 0;
+    }
+  }
+
+  &__scrollbar {
+    overflow-y: auto;
+    height: 72px;
+    padding-right: 10px;
+
+    &::-webkit-scrollbar {
+      width: 1px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #014954;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $third-color;
+    }
+
+    @include onTablet {
+      height: auto;
+      padding: 0;
+    }
+  }
+
+  &__title-h3 {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+      margin-bottom: 21px;
+      @include titleH3;
+    }
+  }
 }

@@ -3,25 +3,150 @@
 
   @include contentPaddingInLine;
   @include contentPaddingBlock;
+  @include pageGrid;
+
+  @include onTablet {
+    padding-bottom: 50px;
+  }
+
+  @include onSmallDesktop {
+    padding-bottom: 100px;
+  }
 
   &__title {
+    grid-column: 1 / -1;
     margin-bottom: 25px;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      margin-bottom: 35px;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 9 / -1;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__wrapper-top-right {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 9 / -1;
+    }
+  }
+
+  &__wrapper-bottom-left {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+      align-self: center;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__wrapper-bottom-right {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      gap: 21px;
+      grid-column: span 2;
+      justify-self: end;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 7 / -1;
+      justify-self: start;
+    }
   }
 
   &__description {
-    margin-bottom: 15px;
+    margin-bottom: 45px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      margin-bottom: 23px;
+    }
   }
 
   &__button-play {
     margin-bottom: 80px;
+
+    // @include onTablet {
+    //   margin-bottom: 0;
+    // }
   }
 
   &__title-text {
     margin-bottom: 11px;
     @include titleText;
+
+    @include onSmallDesktop {
+      margin-bottom: 15px;
+    }
   }
 
   &__second-title {
     margin-bottom: 22px;
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__design-text {
+    writing-mode: vertical-rl;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 130%;
+    color: #000;
+    text-shadow: -1px -1px 0 $third-color,
+      1px -1px 0 $third-color,
+      -1px 1px 0 $third-color,
+      1px 1px 0 $third-color;
+
+    @include onSmallDesktop {
+      font-size: 64px;
+    }
+
+    &--rotate {
+      transform: rotate(-180deg);
+    }
+
+    &--transparence-50 {
+      opacity: 0.5;
+    }
+
+    &--transparence-20 {
+      opacity: 0.2;
+    }
+
+    &--transparence-10 {
+      opacity: 0.1;
+    }
+
+    &--transparence-5 {
+      opacity: 0.05;
+    }
+
+    &--small-desktop {
+      display: none;
+
+      @include onSmallDesktop {
+        display: block;
+      }
+    }
   }
 }

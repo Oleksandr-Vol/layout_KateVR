@@ -1,0 +1,91 @@
+.help {
+  background-color: $main-background;
+  min-height: 100vh;
+
+  @include onTablet {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  &__container {
+    @include onTablet {
+      background-color: $main-background;
+    }
+  }
+
+  &__wrapper {
+    padding-block: 30px;
+    @include contentPaddingInLine;
+
+    @include onTablet {
+      padding-block: 51px 124px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__text-link {
+    text-decoration: none;
+    color: $third-color;
+  }
+
+  &__links {
+    @include pageGrid;
+    row-gap: 30px;
+  }
+
+  &__links-wrapper {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__contact-links-wrapper {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 4 / 6;
+    }
+  }
+
+  &__link {
+    align-self: flex-start;
+    text-decoration: none;
+    color: $third-color;
+  }
+
+  &__contact-link {
+    align-self: flex-start;
+    text-decoration: none;
+    color: $main-color;
+    line-height: normal;
+
+    &--tel {
+      margin-bottom: 11px;
+
+      @include onTablet {
+        margin-bottom: 25px;
+      }
+    }
+
+    &--email {
+      margin-bottom: 8px;
+
+      @include onTablet {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

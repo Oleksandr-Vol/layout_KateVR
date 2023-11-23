@@ -1,0 +1,69 @@
+.stepper {
+  @include onSmallDesktop {
+    width: 207px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    &--top {
+      margin-bottom: 16px;
+
+      @include onSmallDesktop {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__step-name {
+    grid-column: span 1;
+    justify-self: center;
+    color: $fifth-color;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration: none;
+    pointer-events: none;
+
+    @include onTablet {
+      font-size: 14px;
+    }
+
+    @include onSmallDesktop {
+      justify-self: start;
+      color: $main-color;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    &--is-active {
+      color: $third-color;
+
+      @include onSmallDesktop {
+        color: $secondary-color;
+        pointer-events: all;
+      }
+    }
+
+    &--right {
+      margin-right: 2px;
+      grid-column: 3 / 4;
+      justify-self: end;
+    }
+  }
+
+  &__line {
+    grid-column: span 1;
+    height: 1px;
+    background-color: $fourth-color;
+
+    @include onSmallDesktop {
+      background-color: #212121;
+    }
+
+    &--is-active {
+      background-color: $third-color;
+    }
+  }
+}

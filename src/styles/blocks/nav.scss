@@ -1,4 +1,16 @@
 .nav {
+  padding-top: 38px;
+
+  @include onTablet {
+    padding-block: 46px 128px;
+  }
+
+  &--language {
+    @include onTablet {
+      padding-block: 46px 15px;
+    }
+  }
+
   &__list {
     list-style: none;
   }
@@ -19,6 +31,10 @@
     &:hover {
       background-color: #110e25;
       color: $third-color;
+    }
+
+    @include onTablet {
+      padding-left: 155px;
     }
   }
 }

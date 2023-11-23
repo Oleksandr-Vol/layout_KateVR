@@ -5,14 +5,148 @@
 
   &__title {
     margin-bottom: 32px;
+
+    @include onSmallDesktop {
+      margin-bottom: 82px;
+      text-align: center;
+    }
   }
 
-  // &__wrapper {
+  &__wrapper {
+    @include pageGrid;
+    row-gap: 20px;
 
-  // }
+    @include onSmallDesktop {
+      row-gap: 90px;
+    }
+  }
+
+  &__article {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-column: span 2;
+    }
+
+    @include onSmallDesktop {
+      grid-column: span 4;
+    }
+
+    &--icon-compatible {
+      &::before {
+        @include onTablet {
+          content: "";
+          margin-bottom: 24px;
+          @include iconProperties;
+          background-image: url(../images/icons/benefits/icon-compatiple.svg);
+          width: 80px;
+          height: 80px;
+        }
+
+        @include onSmallDesktop {
+          margin-bottom: 31px;
+        }
+      }
+    }
+
+    &--icon-control-panel {
+      &::before {
+        @include onTablet {
+          content: "";
+          margin-bottom: 24px;
+          @include iconProperties;
+          background-image: url(../images/icons/benefits/icon-control-panel.svg);
+          width: 88px;
+          height: 80px;
+        }
+
+        @include onSmallDesktop {
+          margin-bottom: 31px;
+        }
+      }
+    }
+
+    &--icon-wireless-sensors {
+      &::before {
+        @include onTablet {
+          content: "";
+          margin-bottom: 28px;
+          @include iconProperties;
+          background-image: url(../images/icons/benefits/icon-wireless-sensors.svg);
+          width: 105px;
+          height: 75px;
+        }
+
+        @include onSmallDesktop {
+          margin-bottom: 35px;
+        }
+      }
+    }
+  }
 
   &__title-h3 {
     margin-bottom: 11px;
     @include titleH3;
+
+    @include onTablet {
+      margin-bottom: 16px;
+    }
+
+    &--compatible {
+      &::before {
+        content: "UNIVERSALLY ";
+
+        @include onTablet {
+          content: "";
+        }
+
+        @media (min-width: 1024px) {
+          content: "UNIVERSALLY ";
+        }
+      }
+    }
+
+    &--control-panel {
+      &::before {
+        content: "VR/PC ";
+
+        @include onTablet {
+          content: "";
+        }
+
+        @media (min-width: 760px) {
+          content: "VR/PC ";
+        }
+      }
+    }
+  }
+
+  &__text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onSmallDesktop {
+      display: block;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include onSmallDesktop {
+      display: flex;
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
   }
 }

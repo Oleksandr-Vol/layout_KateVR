@@ -1,7 +1,5 @@
 .footer {
-  display: grid;
-  column-gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  @include pageGrid;
   grid-template-rows: 29px 72px 1fr 5px;
   justify-items: start;
 
@@ -11,8 +9,13 @@
   @include contentPaddingInLine;
 
   @include onTablet {
-    display: flex;
-    justify-content: space-between;
+    grid-template-rows: initial;
+    align-items: center;
+    padding-block: 21px;
+  }
+
+  @include onSmallDesktop {
+    padding-block: 40px;
   }
 
   &__logo-link {
@@ -28,26 +31,15 @@
   &__nav {
     grid-column: 1 / 2;
     grid-row: 2 / -1;
-  }
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    list-style: none;
 
     @include onTablet {
-      flex-direction: row;
-      gap: 40px;
+      grid-column: 2 / 6;
+      justify-self: center;
     }
-  }
 
-  &__nav-link {
-    text-decoration: none;
-    color: $secondary-color;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 150%;
+    @include onSmallDesktop {
+      grid-column: 5 / 9;
+    }
   }
 
   &__contacts {
@@ -77,5 +69,16 @@
     align-items: flex-end;
     grid-column: 2 / 3;
     grid-row: 3 / 4;
+
+    @include onTablet {
+      grid-column: 6 / 7;
+      grid-row: 1 / 2;
+      justify-self: end;
+      height: 14px;
+    }
+
+    @include onSmallDesktop {
+      grid-column: -3 / -1;
+    }
   }
 }

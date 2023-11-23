@@ -6,20 +6,124 @@
 
   &__title {
     margin-bottom: 12px;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onSmallDesktop {
+      margin-bottom: 16px;
+    }
   }
 
   &__title-text {
-    margin-bottom: 30px;
+    margin-bottom: 42px;
     @include titleText;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onSmallDesktop {
+      margin-bottom: 83px;
+    }
   }
 
   &__wrapper {
-    display: grid;
+    @include pageGrid;
     row-gap: 20px;
+
+    @include onTablet {
+      row-gap: 40px;
+    }
+  }
+
+  &__article {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-column: span 3;
+    }
+
+    &--icon-education {
+      &::before {
+        @include onTablet {
+          content: "";
+          margin-block: 13px 22px;
+          @include iconProperties;
+          background-image: url(../images/icons/areas/icon-education.svg);
+          width: 98px;
+          height: 81px;
+        }
+
+        @include onSmallDesktop {
+          margin-block: 0 32px;
+        }
+      }
+    }
+
+    &--icon-real-estate {
+      &::before {
+        @include onTablet {
+          content: "";
+          margin-bottom: 30px;
+          @include iconProperties;
+          background-image: url(../images/icons/areas/icon-real-estate.svg);
+          width: 84px;
+          height: 84px;
+        }
+      }
+    }
+
+    &--icon-fitness {
+      &::before {
+        @include onTablet {
+          content: "";
+          margin-bottom: 33px;
+          @include iconProperties;
+          background-image: url(../images/icons/areas/icon-fitness.svg);
+          width: 110px;
+          height: 81px;
+        }
+      }
+    }
+
+    &--icon-social-int {
+      &::before {
+        @include onTablet {
+          content: "";
+          margin-bottom: 31px;
+          @include iconProperties;
+          background-image: url(../images/icons/areas/icon-social-int.svg);
+          width: 83px;
+          height: 83px;
+        }
+      }
+    }
   }
 
   &__title-h3 {
     margin-bottom: 11px;
     @include titleH3;
+
+    @include onTablet {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include onTablet {
+      display: block;
+      text-align: center;
+    }
   }
 }

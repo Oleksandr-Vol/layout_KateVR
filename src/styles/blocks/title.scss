@@ -2,10 +2,19 @@
   color: $secondary-color;
   font-size: 21px;
   font-weight: 900;
-  line-height: 130%;
+  line-height: normal;
 
-  &--h1 {
+  @include onSmallDesktop {
+    font-size: 36px;
+  }
+
+  &--big {
     font-size: 26px;
+    line-height: 130%;
+
+    @include onSmallDesktop {
+      font-size: 46px;
+    }
   }
 
   &__accented {
