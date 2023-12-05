@@ -1,0 +1,33 @@
+.two-background {
+  background-color: $main-background;
+  min-height: 100vh;
+
+  @include onTablet {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  &--faq {
+    @include onTablet {
+      background-color: $main-background;
+    }
+  }
+
+  &--grid {
+    @include onSmallDesktop {
+      background-color: rgba(0, 0, 0, 0.7);
+      @include contentPaddingInLine;
+      padding-block: 134px;
+      @include pageGrid;
+    }
+  }
+
+  &__container {
+    background-color: $main-background;
+
+    &--grid {
+      @include onSmallDesktop {
+        grid-column: 2/-2;
+      }
+    }
+  }
+}

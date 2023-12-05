@@ -1,7 +1,4 @@
 .faq {
-  background-color: $main-background;
-  min-height: 100vh;
-
   &__main {
     padding-block: 30px 13px;
     @include contentPaddingInLine;
@@ -9,10 +6,18 @@
     @include onTablet {
       padding-block: 51px;
     }
+
+    @include onSmallDesktop {
+      padding: 25px 90px 50px;
+    }
   }
 
   &__title {
     margin-bottom: 30px;
+
+    @include onSmallDesktop {
+      margin-bottom: 50px;
+    }
   }
 
   &__article-wrapper {
@@ -23,22 +28,33 @@
     @include onTablet {
       gap: 18px;
     }
+
+    @include onSmallDesktop {
+      gap: 15px;
+    }
   }
 
   &__article {
     border-radius: 4px;
     border: 1px solid $third-color;
-    padding: 18px 12px;
-    // padding: 20px 12px 12px;
-
-    @include onTablet {
-      padding: 14px 30px 15px;
-      // padding: 20px 14px 24px 28px;
-    }
   }
 
   &__question-link {
     text-decoration: none;
+  }
+
+  &__question-wrapper {
+    padding: 18px 12px;
+
+    @include onTablet {
+      padding-inline: 30px;
+    }
+
+    @include onSmallDesktop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &__question {
@@ -48,15 +64,32 @@
     line-height: 150%;
   }
 
+  &__arrow-icon {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+    }
+  }
+
   &__answer-wrapper {
     // display: none;
+    padding: 0 12px 12px;
+
+    @include onTablet {
+      padding: 0 30px 20px;
+    }
   }
 
   &__answer {
-    margin-block: 18px 10px;
+    margin-bottom: 10px;
 
     @include onTablet {
-      margin-block: 18px 15px;
+      margin-bottom: 15px;
+    }
+
+    @include onSmallDesktop {
+      margin-bottom: 20px;
     }
   }
 
@@ -65,6 +98,10 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 150%;
+
+    @include onSmallDesktop {
+      font-size: 14px;
+    }
   }
 
   &__more-link {

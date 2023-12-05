@@ -14,42 +14,46 @@
   }
 
   &__title {
-    grid-column: 1 / -1;
+    grid-column: 1/-1;
     margin-bottom: 25px;
 
     @include onTablet {
-      grid-column: 4 / -1;
+      grid-column: 4/-1;
       margin-bottom: 35px;
     }
 
     @include onSmallDesktop {
-      grid-column: 9 / -1;
+      grid-column: 9/-1;
       margin-bottom: 30px;
     }
   }
 
   &__wrapper-top-right {
-    grid-column: 1 / -1;
+    grid-column: 1/-1;
 
     @include onTablet {
-      grid-column: 4 / -1;
+      grid-column: 4/-1;
     }
 
     @include onSmallDesktop {
-      grid-column: 9 / -1;
+      grid-column: 9/-1;
     }
   }
 
   &__wrapper-bottom-left {
-    grid-column: 1 / -1;
+    grid-column: 1/-1;
 
     @include onTablet {
-      grid-column: span 4;
+      grid-column: 1/4;
+    }
+
+    @media (min-width: 725px) {
+      grid-column: 1/5;
       align-self: center;
     }
 
     @include onSmallDesktop {
-      grid-column: 1 / 6;
+      grid-column: 1/6;
     }
   }
 
@@ -59,12 +63,16 @@
     @include onTablet {
       display: flex;
       gap: 21px;
-      grid-column: span 2;
-      justify-self: end;
+      grid-column: 4/-1;
+      place-self: center;
+    }
+
+    @media (min-width: 725px) {
+      grid-column: 5/-1;
     }
 
     @include onSmallDesktop {
-      grid-column: 7 / -1;
+      grid-column: 7/-1;
       justify-self: start;
     }
   }
@@ -141,10 +149,22 @@
       opacity: 0.05;
     }
 
+    &--transparence-3 {
+      opacity: 0.03;
+    }
+
     &--small-desktop {
       display: none;
 
       @include onSmallDesktop {
+        display: block;
+      }
+    }
+
+    &--big-desktop {
+      display: none;
+
+      @include onBigDesktop {
         display: block;
       }
     }

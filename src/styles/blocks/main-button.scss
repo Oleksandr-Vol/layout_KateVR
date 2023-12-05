@@ -22,7 +22,6 @@
 
   @include onSmallDesktop {
     width: 200px;
-    height: $main-button-height;
     font-size: 16px;
   }
 
@@ -47,11 +46,27 @@
         justify-self: center;
       }
 
+      @include onSmallDesktop {
+        margin-top: 28px;
+        grid-column: 1/4;
+        justify-self: start;
+      }
+
       &--pay {
         @include onTablet {
           margin-top: 58px;
         }
+
+        @include onSmallDesktop {
+          margin-top: 44px;
+        }
       }
+    }
+  }
+
+  &--order-complete {
+    @include onSmallDesktop {
+      width: 218px;
     }
   }
 

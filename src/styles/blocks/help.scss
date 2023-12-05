@@ -1,32 +1,31 @@
 .help {
-  background-color: $main-background;
-  min-height: 100vh;
-
-  @include onTablet {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
-  &__container {
-    @include onTablet {
-      background-color: $main-background;
-    }
-  }
-
-  &__wrapper {
+  &__main {
     padding-block: 30px;
     @include contentPaddingInLine;
+    @include pageGrid;
 
     @include onTablet {
       padding-block: 51px 124px;
+    }
+
+    @include onSmallDesktop {
+      padding: 25px 90px 74px;
+      grid-template-columns: repeat(8, 1fr);
     }
   }
 
   &__title {
     margin-bottom: 30px;
+    grid-column: 1/-1;
+
+    @include onSmallDesktop {
+      margin-bottom: 50px;
+    }
   }
 
   &__text {
     margin-bottom: 30px;
+    grid-column: 1/-1;
   }
 
   &__text-link {
@@ -35,28 +34,25 @@
   }
 
   &__links {
-    @include pageGrid;
-    row-gap: 30px;
-  }
-
-  &__links-wrapper {
-    grid-column: 1 / -1;
+    grid-column: 1/-1;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 30px;
 
     @include onTablet {
-      grid-column: 1 / 3;
+      grid-column: 1/4;
+      margin-bottom: 0;
     }
   }
 
-  &__contact-links-wrapper {
-    grid-column: 1 / -1;
+  &__contact-links {
+    grid-column: 1/-1;
     display: flex;
     flex-direction: column;
 
     @include onTablet {
-      grid-column: 4 / 6;
+      grid-column: 4/6;
     }
   }
 

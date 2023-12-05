@@ -10,8 +10,11 @@
     padding-top: 30px;
   }
 
-  @include onTablet {
+  @include onSmallDesktop {
     padding-top: 47px;
+
+    // background: linear-gradient(180deg, $main-background 0%, rgba(25, 21, 54, 0.83) 70.31%, rgba(25, 21, 54, 0.00) 100%);
+    // padding-block: 16px 34px;
   }
 
   &__logo-link {
@@ -19,22 +22,25 @@
   }
 
   &__logo {
+    width: 58px;
     height: 12px;
 
     @include onTablet {
+      width: 67px;
       height: 14px;
     }
 
     @include onSmallDesktop {
+      width: 78px;
       height: 16px;
     }
   }
 
-  &--menu {
+  &--flex-end {
     justify-content: flex-end;
   }
 
-  &--menu-language {
+  &--flex-start {
     justify-content: flex-start;
   }
 
@@ -61,5 +67,9 @@
       align-items: center;
       gap: 37px;
     }
+  }
+
+  &--padding-18 {
+    padding: 18px 18px 0;
   }
 }

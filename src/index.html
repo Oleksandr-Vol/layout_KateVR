@@ -41,19 +41,19 @@
         <div class="top-bar__right-side">
           <nav class="nav-small">
             <ul class="nav-small__list nav-small__list--header">
-              <li>
+              <li class="nav-small__item">
                 <a href="#about" class="nav-small__link nav-small__link--header">About</a>
               </li>
 
-              <li>
+              <li class="nav-small__item">
                 <a href="#tech" class="nav-small__link nav-small__link--header">Tech</a>
               </li>
 
-              <li>
+              <li class="nav-small__item">
                 <a href="#benefits" class="nav-small__link nav-small__link--header">Benefits</a>
               </li>
 
-              <li>
+              <li class="nav-small__item">
                 <a href="#contact" class="nav-small__link nav-small__link--header">Contact</a>
               </li>
             </ul>
@@ -67,17 +67,12 @@
 
       <picture class="header__picture">
         <source
-          media="(min-width: 1440px)"
-          srcset="images/header/header-desktop-big_screen.png"
-        >
-
-        <source
           media="(min-width: 1280px)"
           srcset="images/header/header-desktop-small_screen.png"
         >
 
         <source
-          media="(min-width: 640px)"
+          media="(min-width: 660px)"
           srcset="images/header/header-tablet.png"
         >
 
@@ -117,7 +112,7 @@
           <a href="#areas" class="more-link">
             <div>More</div>
 
-            <div class="icon icon--icon-unfold-down more-link__icon"></div>
+            <div class="icon icon--arrow-down more-link__icon"></div>
           </a>
         </div>
 
@@ -152,9 +147,9 @@
       </div>
     </header>
 
-    <menu class="menu page__menu" id="menu">
-      <div class="menu__container">
-        <div class="top-bar top-bar--menu">
+    <menu class="two-background page__menu" id="menu">
+      <div class="two-background__container">
+        <div class="top-bar top-bar--flex-end">
           <a href="#" class="icon icon--close"></a>
         </div>
 
@@ -192,9 +187,9 @@
       </div>
     </menu>
 
-    <menu class="menu page__menu" id="menu-language">
-      <div class="menu__container">
-        <div class="top-bar top-bar--menu-language">
+    <menu class="two-background page__menu" id="menu-language">
+      <div class="two-background__container">
+        <div class="top-bar top-bar--flex-start">
           <a href="#menu" class="icon icon--back"></a>
         </div>
 
@@ -352,6 +347,14 @@
               about__design-text
               about__design-text--transparence-5
               about__design-text--small-desktop
+            "
+          >ABOUT US</p>
+
+          <p class="
+              about__design-text
+              about__design-text--rotate
+              about__design-text--transparence-3
+              about__design-text--big-desktop
             "
           >ABOUT US</p>
         </div>
@@ -591,19 +594,19 @@
 
       <nav class="nav-small footer__nav">
         <ul class="nav-small__list">
-          <li>
+          <li class="nav-small__item">
             <a href="#about" class="nav-small__link">About</a>
           </li>
 
-          <li>
+          <li class="nav-small__item">
             <a href="#tech" class="nav-small__link">Tech</a>
           </li>
 
-          <li>
+          <li class="nav-small__item">
             <a href="#benefits" class="nav-small__link">Benefits</a>
           </li>
 
-          <li>
+          <li class="nav-small__item">
             <a href="#contact" class="nav-small__link">Contact</a>
           </li>
         </ul>
@@ -641,7 +644,34 @@
         <a href="#" class="icon icon--close icon--close--order"></a>
       </div>
 
-      <div class="stepper">
+      <div class="order__top-desktop">
+        <a href="index.html" class="order__logo-link">
+          <img
+            src="images/logo.png"
+            alt="logo"
+            class="order__logo"
+          >
+        </a>
+
+        <a href="#"
+          class="
+            order__step-name
+            order__step-name--place-order
+            order__step-name--is-active
+          "
+        >Place Order</a>
+
+        <div class="order__step-name order__step-name--pay">Pay</div>
+
+        <div
+          class="
+            order__step-name
+            order__step-name--order-complete
+          "
+        >Order complete</div>
+      </div>
+
+      <div class="stepper order__stepper">
         <div class="stepper__container stepper__container--top">
           <a href="#" class="stepper__step-name stepper__step-name--is-active">Place Order</a>
 
@@ -660,11 +690,6 @@
       </div>
 
       <picture class="order__picture">
-        <source
-          media="(min-width: 1440px)"
-          srcset="images/order/order-desktop-big_screen.png"
-        >
-
         <source
           media="(min-width: 1280px)"
           srcset="images/order/order-desktop-small_screen.png"
@@ -710,149 +735,151 @@
           <div class="form__price-num">1200$</div>
         </div>
 
-        <label class="form__label form__label--left-side">
-          <input
-            type="text"
-            name="first-name"
-            required
-            class="form__field"
-          >
+        <div class="form__wrapper">
+          <label class="form__label form__label--place-order">
+            <input
+              type="text"
+              name="first-name"
+              required
+              class="form__field"
+            >
 
-          <div class="form__field-name">First Name*</div>
-        </label>
+            <div class="form__field-name">First Name*</div>
+          </label>
 
-        <label class="form__label form__label--right-side">
-          <input
-            type="text"
-            name="last-name"
-            required
-            class="form__field"
-          >
+          <label class="form__label form__label--place-order">
+            <input
+              type="text"
+              name="last-name"
+              required
+              class="form__field"
+            >
 
-          <div class="form__field-name">Last Name*</div>
-        </label>
+            <div class="form__field-name">Last Name*</div>
+          </label>
 
-        <label class="form__label form__label--left-side">
-          <input
-            type="email"
-            name="email"
-            required
-            class="form__field"
-          >
+          <label class="form__label form__label--place-order">
+            <input
+              type="email"
+              name="email"
+              required
+              class="form__field"
+            >
 
-          <div class="form__field-name">Email*</div>
-        </label>
+            <div class="form__field-name">Email*</div>
+          </label>
 
-        <label class="form__label form__label--right-side">
-          <input
-            type="tel"
-            name="phone-number"
-            required
-            class="form__field"
-          >
+          <label class="form__label form__label--place-order">
+            <input
+              type="tel"
+              name="phone-number"
+              required
+              class="form__field"
+            >
 
-          <div class="form__field-name">Phone Number*</div>
-        </label>
+            <div class="form__field-name">Phone Number*</div>
+          </label>
 
-        <label class="form__label form__label--left-side">
-          <div
+          <label class="form__label form__label--place-order">
+            <div
+              class="
+                form__field-name
+                form__field-name--static
+                form__field-name--country-city
+              "
+            >Country*</div>
+
+            <select
+              class="form__select"
+              name="country"
+              required>
+              <option value="UA">Ukraine</option>
+              <option value="BG">Bulgaria</option>
+              <option value="CA">Canada</option>
+              <option value="HR">Croatia</option>
+              <option value="CY">Cyprus</option>
+              <option value="CZ">Czech Republic</option>
+              <option value="FR">France</option>
+              <option value="GI">Gibraltar</option>
+              <option value="DE">Germany</option>
+              <option value="GR">Greece</option>
+              <option value="IT">Italy</option>
+              <option value="NL">Netherlands</option>
+              <option value="PL">Poland</option>
+              <option value="PT">Portugal</option>
+              <option value="RO">Romania</option>
+              <option value="ES">Spain</option>
+              <option value="DK">Denmark</option>
+              <option value="EE">Estonia</option>
+              <option value="FO">Faroe Islands</option>
+              <option value="FI">Finland</option>
+              <option value="GL">Greenland</option>
+              <option value="IS">Iceland</option>
+              <option value="IE">Ireland</option>
+              <option value="LV">Latvia</option>
+              <option value="LT">Lithuania</option>
+              <option value="NO">Norway</option>
+              <option value="SE">Sweden</option>
+              <option value="CH">Switzerland</option>
+              <option value="TR">Turkey</option>
+              <option value="GB">United Kingdom</option>
+              <option value="US">United States</option>
+            </select>
+          </label>
+
+          <label class="form__label form__label--place-order">
+            <div
+              class="
+                form__field-name
+                form__field-name--static
+                form__field-name--country-city
+              "
+            >City*</div>
+
+            <select name="city" required>
+              <option value="Kyiv">Kyiv</option>
+              <option value="Kharkiv">Kharkiv</option>
+              <option value="Odessa">Odessa</option>
+              <option value="Dnipro">Dnipro</option>
+              <option value="Donetsk">Donetsk</option>
+              <option value="Zaporizhia">Zaporizhia</option>
+              <option value="Lviv">Lviv</option>
+              <option value="Kryvyi Rih">Kryvyi Rih</option>
+              <option value="Mykolaiv">Mykolaiv</option>
+              <option value="Mariupol">Mariupol</option>
+            </select>
+          </label>
+
+          <label class="form__label form__label--place-order">
+            <input
+              type="text"
+              name="shipping-adress"
+              required
+              class="form__field"
+            >
+
+            <div class="form__field-name">Shipping Adress*</div>
+          </label>
+
+          <label class="form__label form__label--place-order">
+            <input
+              type="text"
+              name="shipping-adress-2"
+              class="form__field"
+            >
+
+            <div class="form__field-name">Shipping Adress 2</div>
+          </label>
+
+          <button
+            type="submit"
             class="
-              form__field-name
-              form__field-name--static
-              form__field-name--country-city
+              main-button
+              main-button--form
+              main-button--form--order
             "
-          >Country*</div>
-
-          <select
-            class="form__select"
-            name="country"
-            required>
-            <option value="UA">Ukraine</option>
-            <option value="BG">Bulgaria</option>
-            <option value="CA">Canada</option>
-            <option value="HR">Croatia</option>
-            <option value="CY">Cyprus</option>
-            <option value="CZ">Czech Republic</option>
-            <option value="FR">France</option>
-            <option value="GI">Gibraltar</option>
-            <option value="DE">Germany</option>
-            <option value="GR">Greece</option>
-            <option value="IT">Italy</option>
-            <option value="NL">Netherlands</option>
-            <option value="PL">Poland</option>
-            <option value="PT">Portugal</option>
-            <option value="RO">Romania</option>
-            <option value="ES">Spain</option>
-            <option value="DK">Denmark</option>
-            <option value="EE">Estonia</option>
-            <option value="FO">Faroe Islands</option>
-            <option value="FI">Finland</option>
-            <option value="GL">Greenland</option>
-            <option value="IS">Iceland</option>
-            <option value="IE">Ireland</option>
-            <option value="LV">Latvia</option>
-            <option value="LT">Lithuania</option>
-            <option value="NO">Norway</option>
-            <option value="SE">Sweden</option>
-            <option value="CH">Switzerland</option>
-            <option value="TR">Turkey</option>
-            <option value="GB">United Kingdom</option>
-            <option value="US">United States</option>
-          </select>
-        </label>
-
-        <label class="form__label form__label--right-side">
-          <div
-            class="
-              form__field-name
-              form__field-name--static
-              form__field-name--country-city
-            "
-          >City*</div>
-
-          <select name="city" required>
-            <option value="Kyiv">Kyiv</option>
-            <option value="Kharkiv">Kharkiv</option>
-            <option value="Odessa">Odessa</option>
-            <option value="Dnipro">Dnipro</option>
-            <option value="Donetsk">Donetsk</option>
-            <option value="Zaporizhia">Zaporizhia</option>
-            <option value="Lviv">Lviv</option>
-            <option value="Kryvyi Rih">Kryvyi Rih</option>
-            <option value="Mykolaiv">Mykolaiv</option>
-            <option value="Mariupol">Mariupol</option>
-          </select>
-        </label>
-
-        <label class="form__label form__label--left-side">
-          <input
-            type="text"
-            name="shipping-adress"
-            required
-            class="form__field"
-          >
-
-          <div class="form__field-name">Shipping Adress*</div>
-        </label>
-
-        <label class="form__label form__label--right-side">
-          <input
-            type="text"
-            name="shipping-adress-2"
-            class="form__field"
-          >
-
-          <div class="form__field-name">Shipping Adress 2</div>
-        </label>
-
-        <button
-          type="submit"
-          class="
-            main-button
-            main-button--form
-            main-button--form--order
-          "
-        >Purchase</button>
+          >Purchase</button>
+        </div>
       </form>
 
       <form
@@ -893,101 +920,103 @@
           <div class="form__price-num">1200$</div>
         </div>
 
-        <label class="form__label form__label--card-number">
-          <div
+        <div class="form__wrapper">
+          <label class="form__label form__label--card-number">
+            <div
+              class="
+                form__field-name
+                form__field-name--static
+                form__field-name--pay
+              "
+            >Card Number*</div>
+
+            <input
+              type="text"
+              name="card-number"
+              required
+              placeholder="0000"
+              class="form__field form__field--pay"
+            >
+          </label>
+
+          <div class="icon icon--visa form__icon-visa"></div>
+
+          <label class="form__label form__label--card-holder-name">
+            <input
+              type="text"
+              name="card-holder-name"
+              required
+              class="form__field"
+            >
+            <div class="form__field-name">Card Holder Name*</div>
+          </label>
+
+          <label
             class="
-              form__field-name
-              form__field-name--static
-              form__field-name--pay
-            "
-          >Card Number*</div>
-
-          <input
-            type="text"
-            name="card-number"
-            required
-            placeholder="0000"
-            class="form__field form__field--pay"
-          >
-        </label>
-
-        <div class="icon icon--visa form__icon-visa"></div>
-
-        <label class="form__label form__label--card-holder-name">
-          <input
-            type="text"
-            name="card-holder-name"
-            required
-            class="form__field"
-          >
-          <div class="form__field-name">Card Holder Name*</div>
-        </label>
-
-        <label
-          class="
-            form__label
-            form__label--expiration-date
-            form__label--start
-          "
-        >
-          <div
-            class="
-              form__field-name
-              form__field-name--static
-              form__field-name--pay
-            "
-          >Expiration Date*</div>
-
-          <input
-            type="text"
-            name="expiration-date"
-            required
-            placeholder="MM / YY"
-            class="
-              form__field
-              form__field--pay form__field--pay--expiration-date
-              form__field--expiration-date
+              form__label
+              form__label--expiration-date
+              form__label--start
             "
           >
-        </label>
+            <div
+              class="
+                form__field-name
+                form__field-name--static
+                form__field-name--pay
+              "
+            >Expiration Date*</div>
 
-        <label
-          class="
-            form__label
-            form__label--cvv
-            form__label--start
-          "
-        >
-          <div
-            class="
-              form__field-name
-              form__field-name--static
-              form__field-name--pay
-            "
-          >CVV*</div>
+            <input
+              type="text"
+              name="expiration-date"
+              required
+              placeholder="MM / YY"
+              class="
+                form__field
+                form__field--pay form__field--pay--expiration-date
+                form__field--expiration-date
+              "
+            >
+          </label>
 
-          <input
-            type="text"
-            name="cvv"
-            required
-            placeholder="000"
+          <label
             class="
-              form__field
-              form__field--pay
-              form__field--cvv
+              form__label
+              form__label--cvv
+              form__label--start
             "
           >
-        </label>
+            <div
+              class="
+                form__field-name
+                form__field-name--static
+                form__field-name--pay
+              "
+            >CVV*</div>
 
-        <button
-          type="submit"
-          class="
-            main-button
-            main-button--form
-            main-button--form--order
-            main-button--form--order--pay
-          "
-        >Purchase</button>
+            <input
+              type="text"
+              name="cvv"
+              required
+              placeholder="000"
+              class="
+                form__field
+                form__field--pay
+                form__field--cvv
+              "
+            >
+          </label>
+
+          <button
+            type="submit"
+            class="
+              main-button
+              main-button--form
+              main-button--form--order
+              main-button--form--order--pay
+            "
+          >Purchase</button>
+        </div>
       </form>
 
       <div class="order__complete">
@@ -1002,113 +1031,149 @@
         </p>
 
         <div class="order__button-container">
-          <a href="#" class="main-button">Back to homepage</a>
+          <a href="#" class="main-button main-button--order-complete">Back to homepage</a>
         </div>
       </div>
     </section>
 
-    <section class="faq">
-      <div class="top-bar top-bar--menu">
-        <a href="#" class="icon icon--close"></a>
-      </div>
-
-      <div class="faq__main">
-        <h2 class="title faq__title">
-          FREQUENTLY ASKED
-          <div class="title__accented">QUESTIONS</div>
-        </h2>
-
-        <div class="faq__article-wrapper">
-          <article class="faq__article">
-            <a href="#" class="faq__question-link">
-              <h3 class="faq__question">
-                What makes KAT loco different from other systems?
-              </h3>
-            </a>
-
-            <div class="faq__answer-wrapper">
-              <p class="faq__answer">
-                Despite being approached from many different angles, all traditional VR Locomotion systems including roomscale, teleportation, and free locomotion failed to provide an optimal solution capable of integrating high immersion with convenience. KAT loco does all of that without repeating their flaws. Our system offers a complete and versatile solution for an affordable price what makes it a perfect choice for home-use. It is also 100% user friendly, wireless, universally compatible, and more! It even offers decoupled head and body directions!
-              </p>
-
-              <p class="faq__inf-of-update">
-                Last updated: Wed, June 12 2019 7:07 PM UTC +03:00
-              </p>
-            </div>
-          </article>
-
-          <article class="faq__article">
-            <a href="#" class="faq__question-link">
-              <h3 class="faq__question">
-                Will it decrease my motion sickness?
-              </h3>
-            </a>
-
-            <div class="faq__answer-wrapper">
-              <p class="faq__answer">
-                Despite being approached from many different angles, all traditional VR Locomotion systems including roomscale, teleportation, and free locomotion failed to provide an optimal solution capable of integrating high immersion with convenience. KAT loco does all of that without repeating their flaws. Our system offers a complete and versatile solution for an affordable price what makes it a perfect choice for home-use. It is also 100% user friendly, wireless, universally compatible, and more! It even offers decoupled head and body directions!
-              </p>
-
-              <p class="faq__inf-of-update">
-                Last updated: Wed, June 12 2019 7:07 PM UTC +03:00
-              </p>
-            </div>
-          </article>
-
-          <article class="faq__article">
-            <a href="#" class="faq__question-link">
-              <h3 class="faq__question">
-                Which VR headsets is it compatible with?
-              </h3>
-            </a>
-
-            <div class="faq__answer-wrapper">
-              <p class="faq__answer">
-                Despite being approached from many different angles, all traditional VR Locomotion systems including roomscale, teleportation, and free locomotion failed to provide an optimal solution capable of integrating high immersion with convenience. KAT loco does all of that without repeating their flaws. Our system offers a complete and versatile solution for an affordable price what makes it a perfect choice for home-use. It is also 100% user friendly, wireless, universally compatible, and more! It even offers decoupled head and body directions!
-              </p>
-
-              <p class="faq__inf-of-update">
-                Last updated: Wed, June 12 2019 7:07 PM UTC +03:00
-              </p>
-            </div>
-          </article>
-
-          <article class="faq__article">
-            <a href="#" class="faq__question-link">
-              <h3 class="faq__question">
-                Is it compatible with Oculus Quest?
-              </h3>
-            </a>
-
-            <div class="faq__answer-wrapper">
-              <p class="faq__answer">
-                Despite being approached from many different angles, all traditional VR Locomotion systems including roomscale, teleportation, and free locomotion failed to provide an optimal solution capable of integrating high immersion with convenience. KAT loco does all of that without repeating their flaws. Our system offers a complete and versatile solution for an affordable price what makes it a perfect choice for home-use. It is also 100% user friendly, wireless, universally compatible, and more! It even offers decoupled head and body directions!
-              </p>
-
-              <p class="faq__inf-of-update">
-                Last updated: Wed, June 12 2019 7:07 PM UTC +03:00
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <div class="faq__more-link">
-          <a href="#" class="more-link">
-            <div>More</div>
-
-            <div class="icon icon--icon-unfold-down more-link__icon"></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="help">
-      <div class="help__container">
-        <div class="top-bar top-bar--menu">
+    <section
+      class="
+        two-background
+        two-background--faq
+        two-background--grid
+      "
+    >
+      <div
+        class="
+          faq
+          two-background__container
+          two-background__container--grid
+        "
+      >
+        <div class="top-bar top-bar--flex-end top-bar--padding-18">
           <a href="#" class="icon icon--close"></a>
         </div>
 
-        <div class="help__wrapper">
+        <div class="faq__main">
+          <h2 class="title faq__title">
+            FREQUENTLY ASKED
+            <div class="title__accented">QUESTIONS</div>
+          </h2>
+
+          <div class="faq__article-wrapper">
+            <article class="faq__article">
+              <a href="#" class="faq__question-link">
+                <div class="faq__question-wrapper">
+                  <p class="faq__question">
+                    What makes KAT loco different from other systems?
+                  </p>
+
+                  <div class="icon icon--arrow-down faq__arrow-icon"></div>
+                </div>
+              </a>
+
+              <div class="faq__answer-wrapper">
+                <p class="faq__answer">
+                  Despite being approached from many different angles, all traditional VR Locomotion systems including roomscale, teleportation, and free locomotion failed to provide an optimal solution capable of integrating high immersion with convenience. KAT loco does all of that without repeating their flaws. Our system offers a complete and versatile solution for an affordable price what makes it a perfect choice for home-use. It is also 100% user friendly, wireless, universally compatible, and more! It even offers decoupled head and body directions!
+                </p>
+
+                <p class="faq__inf-of-update">
+                  Last updated: Wed, June 12 2019 7:07 PM UTC +03:00
+                </p>
+              </div>
+            </article>
+
+            <article class="faq__article">
+              <a href="#" class="faq__question-link">
+                <div class="faq__question-wrapper">
+                  <p class="faq__question">
+                    Will it decrease my motion sickness?
+                  </p>
+
+                  <div class="icon icon--arrow-down faq__arrow-icon"></div>
+                </div>
+              </a>
+
+              <div class="faq__answer-wrapper">
+                <p class="faq__answer">
+                  Despite being approached from many different angles, all traditional VR Locomotion systems including roomscale, teleportation, and free locomotion failed to provide an optimal solution capable of integrating high immersion with convenience. KAT loco does all of that without repeating their flaws. Our system offers a complete and versatile solution for an affordable price what makes it a perfect choice for home-use. It is also 100% user friendly, wireless, universally compatible, and more! It even offers decoupled head and body directions!
+                </p>
+
+                <p class="faq__inf-of-update">
+                  Last updated: Wed, June 12 2019 7:07 PM UTC +03:00
+                </p>
+              </div>
+            </article>
+
+            <article class="faq__article">
+              <a href="#" class="faq__question-link">
+                <div class="faq__question-wrapper">
+                  <p class="faq__question">
+                    Which VR headsets is it compatible with?
+                  </p>
+
+                  <div class="icon icon--arrow-down faq__arrow-icon"></div>
+                </div>
+              </a>
+
+              <div class="faq__answer-wrapper">
+                <p class="faq__answer">
+                  Despite being approached from many different angles, all traditional VR Locomotion systems including roomscale, teleportation, and free locomotion failed to provide an optimal solution capable of integrating high immersion with convenience. KAT loco does all of that without repeating their flaws. Our system offers a complete and versatile solution for an affordable price what makes it a perfect choice for home-use. It is also 100% user friendly, wireless, universally compatible, and more! It even offers decoupled head and body directions!
+                </p>
+
+                <p class="faq__inf-of-update">
+                  Last updated: Wed, June 12 2019 7:07 PM UTC +03:00
+                </p>
+              </div>
+            </article>
+
+            <article class="faq__article">
+              <a href="#" class="faq__question-link">
+                <div class="faq__question-wrapper">
+                  <p class="faq__question">
+                    Is it compatible with Oculus Quest?
+                  </p>
+
+                  <div class="icon icon--arrow-down faq__arrow-icon"></div>
+                </div>
+              </a>
+
+              <div class="faq__answer-wrapper">
+                <p class="faq__answer">
+                  Despite being approached from many different angles, all traditional VR Locomotion systems including roomscale, teleportation, and free locomotion failed to provide an optimal solution capable of integrating high immersion with convenience. KAT loco does all of that without repeating their flaws. Our system offers a complete and versatile solution for an affordable price what makes it a perfect choice for home-use. It is also 100% user friendly, wireless, universally compatible, and more! It even offers decoupled head and body directions!
+                </p>
+
+                <p class="faq__inf-of-update">
+                  Last updated: Wed, June 12 2019 7:07 PM UTC +03:00
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="faq__more-link">
+            <a href="#" class="more-link">
+              <div>More</div>
+
+              <div class="icon icon--arrow-down more-link__icon"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="two-background two-background--grid">
+      <div
+        class="
+          help
+          two-background__container
+          two-background__container--grid
+        "
+      >
+        <div class="top-bar top-bar--flex-end top-bar--padding-18">
+          <a href="#" class="icon icon--close"></a>
+        </div>
+
+        <div class="help__main">
           <h2 class="title help__title">
             HOW CAN WE
             <span class="title__accented">HELP</span>
@@ -1123,30 +1188,28 @@
           </p>
 
           <div class="help__links">
-            <div class="help__links-wrapper">
-              <a href="#" class="help__link">Instruction manual</a>
+            <a href="#" class="help__link">Instruction manual</a>
 
-              <a href="#" class="help__link">Where to go for a warranty</a>
+            <a href="#" class="help__link">Where to go for a warranty</a>
 
-              <a href="#" class="help__link">Service Policy</a>
-            </div>
+            <a href="#" class="help__link">Service Policy</a>
+          </div>
 
-            <div class="help__contact-links-wrapper">
-              <a
-                href="tel:+86-0571-86105373"
-                class="help__contact-link help__contact-link--tel"
-              >+86-0571-86105373</a>
+          <div class="help__contact-links">
+            <a
+              href="tel:+86-0571-86105373"
+              class="help__contact-link help__contact-link--tel"
+            >+86-0571-86105373</a>
 
-              <a
-                href="mailto:global@katvr.com"
-                class="help__contact-link help__contact-link--email"
-              >global@katvr.com</a>
+            <a
+              href="mailto:global@katvr.com"
+              class="help__contact-link help__contact-link--email"
+            >global@katvr.com</a>
 
-              <a
-                href="mailto:overseas@katvr.com"
-                class="help__contact-link"
-              >overseas@katvr.com</a>
-            </div>
+            <a
+              href="mailto:overseas@katvr.com"
+              class="help__contact-link"
+            >overseas@katvr.com</a>
           </div>
         </div>
       </div>

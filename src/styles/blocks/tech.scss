@@ -20,7 +20,12 @@
     grid-column: 1 / -1;
 
     @include onSmallDesktop {
-      justify-self: end;
+      grid-column: 9/12;
+    }
+
+    @include onBigDesktop {
+      grid-column: 8/11;
+      justify-self: center;
     }
   }
 
@@ -188,8 +193,8 @@
 
     @include onTablet {
       height: auto;
-      width: 365px;
-      left: -120px;
+      width: 340px;
+      left: -95px;
       top: 65px;
     }
 
